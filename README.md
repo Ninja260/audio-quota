@@ -1,6 +1,8 @@
 # audio-quota
 
-Linux cli app to control audio output time by daily quota
+Linux cli app to control audio output time by daily quota.
+
+Currently, only tested for the Ubuntu Linux.
 
 To check the remaining audio quota of the day.
 
