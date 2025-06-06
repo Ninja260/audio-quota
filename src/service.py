@@ -3,6 +3,7 @@
 import time
 import subprocess
 import datetime
+import alsaaudio
 
 from enum import Enum
 
@@ -29,14 +30,14 @@ def is_audio_playing():
         return False
 
 def mute_audio():
-    subprocess.getoutput("amixer set Master mute")
+    mixer = alsaaudio.Mixer('Master')
+    mixer.setmute(True)
 
 def is_audio_muted():
-    output = subprocess.getoutput("amixer get Master")
-    if "[off]" in output:
-        return True
-    else:
-        return False
+    mixer = alsaaudio.Mixer('Master')
+    mute_list = mixer.getmute()
+
+    return all(x == 1 for x in mute_list)
 
 
 while True:
@@ -122,6 +123,7 @@ while True:
                 print("audio is muted")
                 mute_audio()
                 audio_state = AudioState.OFF
+                print("what is happening")
 
     else:
         print("audio is not playing")

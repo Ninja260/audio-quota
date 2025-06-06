@@ -1,11 +1,7 @@
 #! /bin/bash
 
-# uninstall audio-quota.service
-sudo systemctl stop audio-quota.service
-sudo systemctl disable audio-quota.service
-sudo rm /etc/systemd/system/audio-quota.service
-sudo systemctl daemon-reload
-sudo systemctl reset-failed
+# remove audio-quota service startup file
+sudo rm /etc/xdg/autostart/audio-quota.desktop
 
 # remove symmetric link
 sudo rm /usr/bin/audio-quota

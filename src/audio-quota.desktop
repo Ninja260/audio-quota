@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/etc/scripts/audio-quota/service.py
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=audio-quota
+Name=audio-quota
+Comment[en_US]=Run audio-quota service at startup
+Comment=Run audio-quota service at startup

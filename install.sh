@@ -16,9 +16,7 @@ sudo cp $CWD/src/audio_quota_on_suspend.sh /lib/systemd/system-sleep/audio_quota
 # make symmetric link
 sudo ln -s /etc/scripts/audio-quota/audio-quota.py /usr/bin/audio-quota
 
-# install audio-quota.service
-sudo cp $CWD/src/audio-quota.service /etc/systemd/system/audio-quota.service
-sudo systemctl start audio-quota
-sudo systemctl enable audio-quota
+# add audio-quota service startup file
+sudo cp $CWD/src/audio-quota.desktop /etc/xdg/autostart/audio-quota.desktop
 
 echo "Installation successful!"
