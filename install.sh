@@ -19,4 +19,7 @@ sudo ln -s /etc/scripts/audio-quota/audio-quota.py /usr/bin/audio-quota
 # add audio-quota service startup file
 sudo cp $CWD/src/audio-quota.desktop /etc/xdg/autostart/audio-quota.desktop
 
+# run the service script without waiting for next boot
+nohup /etc/scripts/audio-quota/audio-quota-service.py > /dev/null 2>&1 &
+
 echo "Installation successful!"

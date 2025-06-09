@@ -12,4 +12,7 @@ sudo rm /lib/systemd/system-sleep/audio_quota_on_suspend
 # remove audio-quota script directory
 sudo rm -r /etc/scripts/audio-quota/
 
+# kill the running service script
+ps aux | grep "audio-quota-service" | grep -v "grep" | awk '{print $2}' | xargs kill > /dev/null
+
 echo "Uninstallation successful!"
