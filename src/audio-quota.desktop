@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/etc/scripts/audio-quota/service.py
+Exec=/etc/scripts/audio-quota/audio-quota-service.py
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
