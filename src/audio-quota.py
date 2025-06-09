@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
-import subprocess
+import alsaaudio
 
 quota_minutes_file = '/etc/scripts/audio-quota/quota_minutes'
 total_seconds_file = "/etc/scripts/audio-quota/today_total_seconds"
@@ -13,7 +13,8 @@ args = parser.parse_args()
 hourval = args.hour
 
 def unmute_audio():
-    subprocess.getoutput("amixer set Master unmute")
+    mixer = alsaaudio.Mixer('Master')
+    mixer.setmute(False)
 
 # if hourval is not null
 if hourval is not None:
